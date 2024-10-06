@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple inetrest </title>
+</head>
+<body>
+    <form onsubmit="interestIs(event)">
+        <label for="principal">Enter the pricipal amount</label>
+        <input type="number" id="principal" placeholder="enter the amount" required> <br><br>
+        <label for="years">Enter the number of years for rate of principal amount</label>
+        <input type="number" id="year" placeholder="enter the year" required> <br><br>
+        <label for="rate">Enter the rate percentage for the amount</label>
+        <input type="number"id="rate" placeholder="enter rate" required><br><br>
+        <input type="submit" value="get interest">
+    </form>
+    <p id="resintrest"></p>
+    <script>
+        function interestIs(event){
+            event.preventDefault();
+            let p = document.getElementById('principal').value
+            let r = document.getElementById('rate').value
+            let y = document.getElementById('year').value
+            const interest = p*y*(r/100)
+            const total = Number(interest) + Number(p)
+            document.getElementById('resintrest').innerHTML = 'The inteterest is '+ interest + 
+            ' Total amount payabale '+ total
+        }
+    </script>
+</body>
+</html>
